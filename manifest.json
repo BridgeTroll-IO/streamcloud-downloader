@@ -1,0 +1,42 @@
+{
+	"manifest_version": 2,
+	"name": "Streamcloud Downloader",
+	"description": "Streamcloud Downloader",
+	"version": "1.2",
+	"icons": {
+	   "16": "images/logo.16.png",
+           "48": "images/logo.48.png",
+          "128": "images/logo.128.png"
+	},
+	"background": {
+		"scripts": ["js/_storage.js","bg.js"],
+		"persistent":true
+	},
+	"content_scripts": [{
+		"js": ["cs.js"],
+		"matches": ["<all_urls>"],
+		"run_at": "document_start",
+		"all_frames": true
+	}],
+	"browser_action": {
+		"default_title": "Streamcloud Downloader",
+		"default_popup": "popup.html",
+		"default_icon": {
+			   "16": "images/logo.16.png",
+			   "48": "images/logo.48.png",
+			  "128": "images/logo.128.png"
+		}
+        },
+	"permissions": [
+		"<all_urls>",
+		"activeTab",
+		"tabs",
+		"storage",
+		"webNavigation",
+		"webRequest",
+		"webRequestBlocking",
+		"unlimitedStorage",
+		"notifications",
+		"downloads"
+	]
+}
